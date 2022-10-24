@@ -1,7 +1,7 @@
 """
-Advanced Algorithms HW3, Q3: Implement a 2-approximation algorithm for 
-the metric TSP problem! The code is directly drawn from a very 
-outstanding existing implementation: 
+Advanced Algorithms HW3, Q3: Implement a 2-approximation algorithm for
+the metric TSP problem! The code is directly drawn from a very
+outstanding existing implementation:
 https://github.com/shiThomas/MST-TSP
 Hence, the answers are available at the GitHub link above.
 Please don't look at it unless you are absolutely stuck!
@@ -13,15 +13,15 @@ import math
 
 def prim(adjList, adjMat):
     """
-    Builds an MST from the given map using the Prim's algorithm, no 
+    Builds an MST from the given map using the Prim's algorithm, no
     need to change anything.
-    
+
     Args:
-        adjList (list of vertex objects): the list of all neighbors of 
+        adjList (list of vertex objects): the list of all neighbors of
             all cities in the map.
-        adjMat (list of lists of ints): the 2D array representing the 
+        adjMat (list of lists of ints): the 2D array representing the
             distance between two cities.
-        
+
     Returns:
         nothing (just changes attributes of vertices).
     """
@@ -56,19 +56,19 @@ def prim(adjList, adjMat):
 
 def tsp(adjList, start):
     """
-    Uses a 2-approximation to get an approximate solution of the TSP 
+    Uses a 2-approximation to get an approximate solution of the TSP
     problem.
-    
+
     Args:
-        adjList (list of vertex objects): the list of all neighbors of 
+        adjList (list of vertex objects): the list of all neighbors of
             all cities in the map.
         start (str): the city where we start our tour.
         (see Map class for more information!)
-        
+
     Returns:
-        tour (list of ints): a tour which is a cycle of cities. Its 
+        tour (list of ints): a tour which is a cycle of cities. Its
             cost is at most twice the optimal solution. It should be an
-            array of cities visited in the tour, in the order visited. 
+            array of cities visited in the tour, in the order visited.
             The cities should be denoted by their rank (their numbering
             in adjList).
     """
@@ -82,10 +82,10 @@ class Vertex:
     """
     Creates and handles a vertex object. Provided for your convenience!
     Don't change anything.
-    
+
     Attributes:
         rank (int): the rank of this node.
-        neigh (list of vertex objects): list of neighbors IN THE 
+        neigh (list of vertex objects): list of neighbors IN THE
             ORIGINAL GRAPH.
         mstN (list of vertex objects): list of neighbors IN THE MST.
         visited (bool): a flag for whether the vertex has been visited.
@@ -97,7 +97,7 @@ class Vertex:
     def __init__(self, rank):
         """
         __init__ function to initialize the vertex.
-        
+
         Args:
             rank (int): rank of the vertex.
         """
@@ -120,11 +120,11 @@ class Vertex:
         """
         Compares this vertex to an input vertex object.
         Note: only needs to compare the rank!
-        
-        Args: 
+
+        Args:
             vertex (vertex object): vertex created by initializing this
                 class.
-            
+
         Returns:
             (bool): True if ranks are equal, False if unequal.
         """
@@ -132,12 +132,12 @@ class Vertex:
 
     def __lt__(self, other):
         """
-        Overloaded comparison operators for priority queue. Sorted 
+        Overloaded comparison operators for priority queue. Sorted
         by cost.
-        
+
         Args:
             other (vertex object): another vertex object to compare.
-        
+
         Returns:
             (bool): True if cost of vertex is less than cost of other,
                 else False.
@@ -148,9 +148,9 @@ class Vertex:
 
 class Edge:
     """
-    Creates and handles edge objects that joins two vertices. 
+    Creates and handles edge objects that joins two vertices.
     Provided for your convenience! Don't change anything.
-    
+
     Attributes:
         vertices (list of strs): list of vertices for this edge.
         weight (int): the weight of this edge.
@@ -159,7 +159,7 @@ class Edge:
     def __init__(self, vertex1=None, vertex2=None, weight=math.inf):
         """
         Initializes the edge.
-        
+
         Args:
             vertex1 (vertex object): first vertex for the edge.
             vertex2 (vertex object): second vertex for the edge.
@@ -198,9 +198,9 @@ class Edge:
 
 class MinQueue:
     """
-    Creates and handles a minqueue. Provided for your convenience! 
+    Creates and handles a minqueue. Provided for your convenience!
     Don't change anything.
-    
+
     Attributes:
         array (list of ints): array storing the values in the queue.
     """
@@ -208,9 +208,9 @@ class MinQueue:
     def __init__(self, array=[]):
         """
         Initializes the edge.
-        
+
         args:
-            array (list of ints): the input array to be inserted into 
+            array (list of ints): the input array to be inserted into
                 the queue.
         """
         self.array = array.copy()
@@ -225,7 +225,7 @@ class MinQueue:
     def isEmpty(self):
         """
         Check if the queue is empty.
-        
+
         Returns:
             (bool): True if empty, false if not empty.
         """
@@ -237,7 +237,7 @@ class MinQueue:
     def insert(self, val):
         """
         Inserts an object into the queue.
-        
+
         Args:
             val (int): value to be inserted into the array.
         """
@@ -272,9 +272,9 @@ class Map:
     Creates and handles map object.
     TODO: complete the getTSPApprox() and getTSPOptimal() methods.
     Everything else is complete and provided for your convenience.
-    
+
     Attributes:
-        adjMat (list of lists of ints): adjacency matrix storing edge 
+        adjMat (list of lists of ints): adjacency matrix storing edge
             weights.
         cities (list of strs): list of city names.
         adjList (list of vertex objects): list of vertices.
@@ -289,7 +289,7 @@ class Map:
     def __init__(self, mapNum=0):
         """
         Initializes the map.
-        
+
         Args:
             mapNum (int): number of the map to use.
         """
@@ -365,7 +365,7 @@ class Map:
 
     def printList(self):
         """
-        Cleanly prints the adjaceny list. Note: skips vertices with 
+        Cleanly prints the adjaceny list. Note: skips vertices with
         no neighbors.
         """
         for vertex in self.adjList:
@@ -378,7 +378,7 @@ class Map:
 
     def printMat(self):
         """
-        Cleanly prints the adjaceny matrix. Note: for the larger 
+        Cleanly prints the adjaceny matrix. Note: for the larger
         matrices, this will still likely be hard to read.
         """
         for row in self.adjMat:
@@ -421,10 +421,10 @@ class Map:
     def getTSPApprox(self):
         """
         Uses the MST to find the approximate solution to TSP.
-        
+
         Returns:
             nothing (just updates self.tour).
-        
+
         Raises:
             Exception: if no MST is set.
         """
@@ -440,12 +440,12 @@ class Map:
     def getTSPOptimal(self):
         """
         Brute-force approach to finding the optimal tour.
-        
-        Returns: 
+
+        Returns:
             nothing (just updates self.tourOpt).
         """
-        # TODO: 
-        # complete a brute-force TSP solution and replace the 
+        # TODO:
+        # complete a brute-force TSP solution and replace the
         # following two lines with an actual implementation
         self.tourOpt = getMap(self.mapNum)[3]
         return
@@ -492,15 +492,15 @@ class Map:
 def getMap(mapNum=0):
     """
     Returns the adjacency matrix and city names for the map.
-    
+
     Args:
         mapNum (int): the number of which map to select.
-        
+
     Returns:
         adjMat (list of lists of ints): the adjacency matrix.
         cityList (list of strs): the list of the cities.
         optTour (str): string of the optimal tour.
-        optList (list of ints): array of the optimal tour (each city 
+        optList (list of ints): array of the optimal tour (each city
             is denoted by their rank: their numbering in cityList).
     """
     if mapNum == 0:
@@ -646,15 +646,15 @@ def getMap(mapNum=0):
 
 def getDist(lat1,long1,lat2,long2):
     """
-    Takes in two coordinates and returns the distance between them 
+    Takes in two coordinates and returns the distance between them
     (in km).
-    
+
     Args:
         lat1 (float): the latitude of the first city.
         long1 (float): the longitude of the first city.
         lat2 (float): the latitude of the second city.
         long2 (float): the longitude of the second city.
-        
+
     Returns:
         dist (int): the distance between the two cities (km).
     """
@@ -690,7 +690,7 @@ def getDist(lat1,long1,lat2,long2):
 def testMSTApprox():
     """
     Tests your code on the various maps.
-            
+
     Returns:
         s (str): a string indicating number of tests passed.
     """
@@ -796,8 +796,8 @@ def testMSTApprox():
 def test2approx():
     """
     Tests your code on the various maps using getTSPOptimal.
-            
-    Returns: 
+
+    Returns:
         s (str): a string indicating number of tests passed.
     """
     passed = 0
@@ -828,17 +828,17 @@ def test2approx():
 
 if __name__ == "__main__":
     """
-    Here, we run the tests! You want to pass 9/9 MST & TSP tests 
-    (which will happen if your implementation is correct). You also 
+    Here, we run the tests! You want to pass 9/9 MST & TSP tests
+    (which will happen if your implementation is correct). You also
     want to pass 4/4 2-approximation tests.
     """
-    
-    # Build MST with Prim's Algorithm, then find the approximate 
+
+    # Build MST with Prim's Algorithm, then find the approximate
     # solution to the TSP problem. Print the results.
     s = testMSTApprox()
     print(s)
 
-    # Check if the MST approximation approach is a 2-approximation of 
+    # Check if the MST approximation approach is a 2-approximation of
     # the optimal solution. In interest of time, only test on the first
     # four maps.
     s = test2approx()
