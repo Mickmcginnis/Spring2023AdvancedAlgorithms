@@ -1,0 +1,5 @@
+4
+Audrey           83 71  8  0 1 6 1
+Shashank         80 79  3  1 0 0 2
+Jack             78 78  6  6 0 0 0
+Shirin           77 82  3  1 2 0 0

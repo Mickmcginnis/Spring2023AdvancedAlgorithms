@@ -1,0 +1,6 @@
+cvxopt==1.2.7
+decorator==4.4.1
+networkx==2.4
+numpy==1.22.1
+PICOS==1.2.0.post36
+matplotlib
