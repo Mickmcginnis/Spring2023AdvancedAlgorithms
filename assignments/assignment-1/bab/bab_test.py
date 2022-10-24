@@ -1,16 +1,21 @@
-'''Code file for branch and bound problem created for Advanced Algorithms
-Spring 2020 at Olin College. These functions run tests on student solutions
-to the branch and bound implementation on integer programming implementation.'''
+"""
+Code file for branch and bound problem created for Advanced Algorithms
+Spring 2020 at Olin College. These functions run tests on student 
+solutions to the branch and bound implementation on integer programming
+(bab_starter.py).
+No need to edit this code, it has been provided for your convenience!
+"""
 
 from bab_starter import BBTreeNode
 import picos as pic
 from picos import RealVariable
 
-
 def problem1():
+    """
+    Test sample problem 1.
+    """
     print("Problem 1")
     fail_count = 0
-
     x = RealVariable("x")
     y = RealVariable("y")
     z = RealVariable("z")
@@ -35,6 +40,9 @@ def problem1():
     return fail_count
 
 def problem2():
+    """
+    Test sample problem 2.
+    """
     print("Problem 2")
     fail_count = 0
     x = RealVariable("x") 
@@ -61,6 +69,9 @@ def problem2():
     return fail_count
 
 def problem3():
+    """
+    Test sample problem 1.
+    """
     print("Problem 3")
     fail_count = 0
     x = RealVariable("x") 
@@ -87,6 +98,9 @@ def problem3():
     return fail_count
 
 def problem4():
+    """
+    Test sample problem 4.
+    """
     print("Problem 4")
     fail_count = 0
     x = RealVariable("x") 
@@ -113,6 +127,9 @@ def problem4():
     return fail_count
 
 def problem5():
+    """
+    Test sample problem 5.
+    """
     print("Problem 5")
     fail_count = 0
     x = RealVariable("x") 
@@ -139,6 +156,9 @@ def problem5():
     return fail_count
 
 def problem6():
+    """
+    Test sample problem 6.
+    """
     print("Problem 6")
     fail_count = 0
     x = RealVariable("x") 
@@ -168,24 +188,18 @@ def problem6():
     return fail_count
 
 def run_all_tests():
-    '''
-    Runs all the tests we have for branch and bound
-    '''
+    """
+    Runs all the sample tests for branch and bound.
+    """
     fail_count = 0
 
     fail_count += problem1()
-
     fail_count += problem2()
-
     fail_count += problem3()
-
     fail_count += problem4()
-
     fail_count += problem5()
-
     fail_count += problem6()
-
-
+    # Print total number of failed tests
     print("All tests completed with " + str(fail_count) + " failure(s).")
 
 if __name__ == '__main__':
