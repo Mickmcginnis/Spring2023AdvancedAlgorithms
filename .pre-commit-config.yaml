@@ -1,0 +1,6 @@
+repos:
+-   repo: https://github.com/Mickmcginnis/Spring2023AdvancedAlgorithms
+    default_language_version:
+      python: python3.9
+    hooks:
+    -   id: trailing-whitespace
