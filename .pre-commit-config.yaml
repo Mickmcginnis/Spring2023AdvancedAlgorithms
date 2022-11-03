@@ -12,5 +12,10 @@ repos:
         entry: gitlint
         args: [--staged, --msg-filename]
         stages: [commit-msg]
-
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    -   id: black
+        language: python
+        args: [--skip-string-normalization]
 
