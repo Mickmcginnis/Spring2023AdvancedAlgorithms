@@ -4,3 +4,6 @@ picos==2.4.11
 pre-commit==2.17.0
 networkx==2.8.7
 numpy==1.23.4
+pytest==7.2.0
+decorator==4.4.1
+matplotlib
