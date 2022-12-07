@@ -1,0 +1,8 @@
+name: installation
+run-name: Installing dependencies
+on: [fork]
+jobs:
+  install-requirements:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -r requirements.txt
