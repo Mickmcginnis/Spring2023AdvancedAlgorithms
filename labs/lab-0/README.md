@@ -1,13 +1,10 @@
 # Lab 0: Badminton Elimination 
-The full lab description can be found [here](/Lab_0.pdf).
+The full lab description can be found [here](/labs/lab-0/Lab_0.pdf) in the PDF.
 
 **Implement the network flows and the linear programming approach to the problem in
 Python (we are providing input files and starter code).**
 
-Use `pip install -r requirements.txt` to install the requirements for the
-right libraries (you might want to use pip3 to use python3).
-
-We have also provided a test file (`test_badminton_elimination.py`).
+We have provided a test file (`test_badminton_elimination.py`).
 At a minimum, your code should pass all of the tests in that file.
 
 Feel free to add your own additional test cases if you would like to more robustly
