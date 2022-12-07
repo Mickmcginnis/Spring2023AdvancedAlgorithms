@@ -1,0 +1,26 @@
+# Potential instructor workflow for running unit tests on GitHub
+
+name: grading
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      path:
+        # Path to repository with unit tests
+        description: 'Path to grading materials'
+        # Default value if no value is explicitly provided
+        default: '.'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Run unit tests via pytest
+      run: pytest -vv "${{ github.event.inputs.path }}"
