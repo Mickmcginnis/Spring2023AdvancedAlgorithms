@@ -1,3 +1,2 @@
 # Assignment 0
-
-This is a placeholder for the additional Advanced Algorithms content that will be added over winter break.
+As of right now there is no assignment-0. Teaching team, feel free to update this README as needed!
