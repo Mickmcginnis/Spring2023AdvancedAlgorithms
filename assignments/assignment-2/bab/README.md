@@ -1,5 +1,5 @@
 # Branch and Bound
-For assignment instructions, please see the homework description on Canvas.
+For assignment instructions, please see [branch_and_bound_problem.pdf](./branch_and_bound_problem.pdf) .
 ## Setup on Ubuntu
 If you're using Ubuntu, you're in luck! All you have to do is run `pip install -r requirements.txt` and you should be good to go. After that, just run `bab_test.py`. If you get the following output, you're set to start working on `bab_starter.py`:
 
