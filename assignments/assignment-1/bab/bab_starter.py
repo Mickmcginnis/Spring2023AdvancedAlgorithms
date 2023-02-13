@@ -35,7 +35,7 @@ class BBTreeNode():
         self.objective = objective
         self.prob = prob
 
-    def __deepcopy__(self):
+    def __deepcopy__(self, var):
         """
         Deepcopies the picos problem.
         This overrides the system's deepcopy method bc it doesn't work
